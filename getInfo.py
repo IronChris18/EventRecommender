@@ -21,7 +21,8 @@ for i in range(0, 5):
 	print url+'\n'
 	page = 'page_'+str(i)+'.txt'
 	print page+'\n'
-	os.system('phantomjs getHtml.js'+' '+url+' '+page)
+	#os.system('phantomjs getHtml.js'+' '+url+' '+page)
+	subprocess.call(["phantomjs","getHtml.js",url,page])
 	print 'Page: '+str(i)+'\n'
 
 file.close()
