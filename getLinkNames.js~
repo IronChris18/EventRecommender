@@ -19,7 +19,7 @@ page.open(url, function(status) {
   if(status === 'success') {
     setTimeout(function() {
       var text = page.evaluate(function () {
-	      return document.title + '\n' + document.body.innerText;	//get link titles in a list
+	      return document.title + '\n' + document.body.innerText;		//get link titles in a list
       });
       output += text;
       fs.write(outfile, output);

@@ -1,5 +1,7 @@
 
 var page = require('webpage').create();
+//var url  = system.args[1]; //'http://illinois.edu/calendar/IllinoisCalendarList';
+//var child;
 var system = require('system');
 var fs = require('fs');
 
@@ -18,8 +20,9 @@ page.open(url, function() {
 	for(var i = 0; i < parent.length; i++) {
 
 		output += parent[i]+'\n';
+		//fs.write(outfile, output);
 	}
-	fs.write(outfile, output);
+		fs.write(outfile, output);
 	phantom.exit();
 });
 
