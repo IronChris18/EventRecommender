@@ -3,21 +3,24 @@ var page = require('webpage').create();
 var system = require('system');
 var fs = require('fs');
 
-var url  = system.args[1];
-var outfile = system.args[2];
+var url= system.args[1];
+var outfile= system.args[2];
 
+console.log("html file: "+outfile);
 page.open(url, function() {
     //Get html page
  	//var output = url +'\n';
-    var page = page.evaluate(function() {
+ 	console.log("html open page");
+    var output = page.evaluate(function() {
         /*var test = document.querySelectorAll('li a');
         return Array.prototype.map.call(test, function(elem) {
             return elem.href;       
         });*/
-	return document.title + '\n' + document.body.innerText;
+		return document.title;// + '\n' + document.body.innerText;
     });
-	var output = page;
+	console.log("before writing file");
 	fs.write(outfile, output);
+	console.log("after write file");
 	phantom.exit();
 });
 
@@ -42,3 +45,4 @@ page.open(url, function() {
             console.log("child stuff: "+child[0]);
             phantom.exit();
         });
+*/
