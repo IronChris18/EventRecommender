@@ -10,16 +10,17 @@ os.system('phantomjs getParent.js links.txt')
 file = open('links.txt', "r")
 
 #for(i=0; i<620; i++):
-for i in range(0, 2):
+for i in range(0, 620):
 	if(i == 0):
 		garbage = file.readline()
 		continue
 	
 	url = file.readline()
-	print "page url: " + url
+	#print "page url: " + url
 	page = 'page_'+str(i)+'.txt'
-	subprocess.call(["wget","-mirror","-A.html" ,"http://www.tumblr.com","-o",page])
-	#subprocess.call(["phantomjs","getHtml.js",url,page])
+	#print url
+	temp = str(url[:-1])
+	subprocess.call(["phantomjs","getHtml.js",temp,page])
 	print 'Page: '+str(i)+'\n'
 
 file.close()
