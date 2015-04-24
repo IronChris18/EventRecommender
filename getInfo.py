@@ -16,8 +16,12 @@ for i in range(0, 620):
 		continue
 	
 	url = file.readline()
+	print "page url: " + url
 	page = 'page_'+str(i)+'.txt'
+	#subprocess.call(["wget",url])
 	subprocess.call(["phantomjs","getHtml.js",url,page])
 	print 'Page: '+str(i)+'\n'
 
 file.close()
+
+os.system('mv *.txt child_pages')

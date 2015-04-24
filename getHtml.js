@@ -10,7 +10,7 @@ page.open(url, function() {
     //Get html page
 
     var output = page.evaluate(function() {
-		return document.title;// + '\n' + document.body.innerText;
+		return document.title + '\n' + document.body.innerText;
     });
 	fs.write(outfile, output);
 	phantom.exit();
