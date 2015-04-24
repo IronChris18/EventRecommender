@@ -8,7 +8,7 @@ os.system('phantomjs getParent.js links.txt')
 #read output file to get links
 ##open each link and retrieve html page
 file = open('links.txt', "r")
-
+name = open('names.txt', "r")
 #for(i=0; i<620; i++):
 for i in range(0, 620):
 	if(i == 0):
