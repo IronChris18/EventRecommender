@@ -20,7 +20,8 @@ for i in range(0, 620):
 	page = 'page_'+str(i)+'.txt'
 	#print url
 	temp = str(url[:-1])
-	subprocess.call(["phantomjs","getHtml.js",temp,page])
+	subprocess.call(["phantomjs","getHtml.js",temp,page]) #no html data
+	#os.system("wget "+temp)	#get html data
 	print 'Page: '+str(i)+'\n'
 
 file.close()
