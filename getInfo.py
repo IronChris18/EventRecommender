@@ -20,7 +20,7 @@ name = open('../names.txt', "r")
 """ open each child page and get html info"""
 for j in range(0, 5):
 	garbage = name.readline()	# name child pages something useful
-for i in range(0, 624):
+for i in range(0, 620):
 	if(i == 0):
 		garbage = file.readline()
 		continue
