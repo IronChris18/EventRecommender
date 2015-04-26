@@ -33,8 +33,6 @@ for i in range(0, 620):
 	page = str(page[:-1])+".txt"	#same for page names
 	subprocess.call(["phantomjs","../getChildren.js",temp,page]) #no html data
 	#os.system("wget "+temp)	#get html data
-	print 'Page: '+str(i)+'\n'
 
 file.close()
 
-#os.system('mv *.txt child_pages')
