@@ -1,0 +1,9 @@
+{"title": {
+  "day": "date",
+  "events": [
+      {"event": "name", "time": "time", "location": "place"},
+      {"event": "name", "time": "time", "location": "place"},
+      {"event": "name", "time": "time", "location": "place"},
+    ]
+  }
+}
