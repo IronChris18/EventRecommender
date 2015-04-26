@@ -5,19 +5,20 @@ var fs = require('fs');
 
 var url  = system.args[1];	//'http://illinois.edu/calendar/IllinoisCalendarList';
 var outfile = system.args[2];
-
 page.open(url, function() {
     //Get parent link
  	var output = url +'\n';
+
     var parent = page.evaluate(function() {
         var test = document.querySelectorAll('span.event-name a');
         return Array.prototype.map.call(test, function(elem) {
             return elem.href;       
         });
     });
-	for(var i = 0; i < parent.length; i++) {
-
+	if(parent && parent.length){
+		for(var i = 0; i < parent.length; i++) {
 		output += parent[i]+'\n';
+		}
 	}
 	fs.write(outfile, output);
 	phantom.exit();

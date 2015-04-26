@@ -3,8 +3,8 @@ var page = require('webpage').create();
 var system = require('system');
 var fs = require('fs');
 
-var url  = system.args[1];	//'http://illinois.edu/calendar/IllinoisCalendarList';
-var outfile = system.args[2];
+var url  = 'http://illinois.edu/calendar/IllinoisCalendarList';
+var outfile = system.args[1];
 
 page.open(url, function() {
     //Get parent link
