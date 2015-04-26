@@ -6,7 +6,7 @@
 import os, subprocess
 
 #get parent names
-os.system('phantomjs ../getLinkNames.js ../names.txt')
+os.system('phantomjs ../getParent.js ../names.txt')
 #get parent links
 os.system('phantomjs ../getParent.js ../links.txt')
 #replace spaces with underscores in calendar names
@@ -31,7 +31,7 @@ for i in range(0, 620):
 	#print url
 	temp = str(url[:-1])	#remove newline character on url
 	page = str(page[:-1])+".txt"	#same for page names
-	subprocess.call(["phantomjs","../getHtml.js",temp,page]) #no html data
+	subprocess.call(["phantomjs","../getChildren.js",temp,page]) #no html data
 	#os.system("wget "+temp)	#get html data
 	print 'Page: '+str(i)+'\n'
 
