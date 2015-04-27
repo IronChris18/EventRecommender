@@ -1,24 +1,29 @@
 import os, subprocess
 
-path = "/home/carberr2/cs410/EventRecommender/child_pages"
+path = "/home/carberr2/cs410/EventRecommender/child_pages/"
 
+i = 1
 for fname in os.listdir(path):
-	if not os.path.isfile(fname):
+	f = path+fname
+	if not os.path.isfile(f):
 		print "not real file: " +fname
-		os.remove(fname)
+		#os.remove(fname)
 		continue
-
-	file = open(fname, "r")
+	print "sup dawg"
+	file = open(f, "r")
 	url = "hello"
-	i = 0
-	while url != None:
-		if(i == 0):
-			garbage = file.readline()
+	print file
+	j = 0
+	for line in file.readlines():
+		if(j == 0):
+			garbage = line # file.readline()
+			j = j+1
 			continue
-		i++
-		url = file.readline()
+		url = line #file.readline()
+		print "inside file: "+url
 		url = str(url[:-1])
-		page = "page_"+str(i)+".txt"
+		page = "event_"+str(i)+".txt"
 		subprocess.call(["phantomjs","../getHtml.js",url,page])
-
+		print str(i)
+		i = i + 1
 	file.close()
